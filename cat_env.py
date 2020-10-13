@@ -45,7 +45,7 @@ def define_action_space(num_items, num_students):
 
 
 def define_observation_space(num_students):
-    return spaces.Discrete(num_students)
+    return spaces.MultiBinary(num_students)
 
 
 class CatEnv(gym.Env):
@@ -103,8 +103,9 @@ class CatEnv(gym.Env):
         if self.M == self.num_iterations:
             done = True
             # MSE (mean square error)
-            reward = np.mean(np.square(self.model.student_abilities - self.student_abilities))
+            reward = -np.mean(np.square(self.model.student_abilities - self.student_abilities), axis=1)
 
+        # reward here is a vector...
         return obs, reward, done, {}
 
     def reset(self):
