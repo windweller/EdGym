@@ -13,7 +13,10 @@ List of supported environments:
 1. Computer Adapative Test (CAT) Environment
 2. Contextual Bandit Style AI Tutor Environment
 
-You can run `cat_env.py` and `eye_env.py` right now. The implementation is also simple enough to understand and extend.
+Computer Adaptive Test (CAT) Environment (details)
+
+Contextual Bandit Style AI Tutor Environment (details)
+
 
 Note that currently both `CatEnv` and `EyeEnv` are defined for multiple students/patients.
 
